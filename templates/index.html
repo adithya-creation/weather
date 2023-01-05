@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Weather</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+  <style>
+    body{
+      margin: 1.5%;
+      
+    }
+    body{
+
+
+background-color: rgb(10, 113, 216,1);
+background-image: linear-gradient(0deg, rgb(10, 113, 216,1) 35%, rgba(0,212,255,1) 100%);
+background-repeat: no-repeat;
+background-size:cover;
+    }
+    input,h1{
+      text-transform: capitalize;
+    }
+    nav{
+      padding: 1.5%;
+      border-radius: 6.5rem;  /*100px*/
+      display:grid;
+
+    }
+    
+.button {
+
+border-radius:10px;
+color: white;
+padding: 0.7rem 0.9rem;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 1.15rem;
+margin: 0.25rem 0.12rem;
+transition-duration: 0.4s;
+cursor: pointer;
+}
+.button {
+    background-color: purple; 
+  border: none;
+  color: #e7e7e7;
+  padding: 1.2ch 2.2ch;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+  border-radius: 12px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  transition-duration: 0.4s;
+}
+
+.button:hover {
+  background-color: rgb(177, 0, 177); 
+  color: white;
+}
+
+.button2 {
+ background-color: #0092d6;
+color: white;
+
+border: 1px solid #0092d6;
+}
+
+.button2:hover {
+color: black; background-color: rgba(255, 255, 255, 0.5);
+}
+  </style>
+</head>
+<body>
+
+  <nav class="row" style="background: rgb(0, 90, 150); color: white;">
+   
+    <div> <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" alt="img" style="float: left;"><h1 style="float: left;" class="col-md-3">Weather Detector</h1></div>
+  </nav>
+  <br>
+  <br>
+  <br>
+  <center class="row">
+    <form action="" method="post" class="col-md-6 col-md-offset-3">
+      {% csrf_token %}
+      <div class="input-group">
+        <input id="search" type="text" class="form-control" name="city" placeholder="Search">
+        <div class="input-group-btn">
+          <button class="btn btn-default" type="submit">
+            <i class="glyphicon glyphicon-search"></i>
+          </button>
+        </div>
+        <form>
+  </center>
+  <div class="row">
+    
+    <div class="col-md-6 col-md-offset-3" style="color: rgba(255, 255, 255, 0.85);">
+      <h1 style="color: yellow;font-weight:bold">{{city}}</h1>
+      <h3>Country Code : {{data.country_code}}</h1>
+        <h5>Coordinate : {{data.coordinate}}</h5>
+        <h5>Temperature : {{data.temp}}°C</h5>
+        <h5>Pressure : {{data.pressure}}</h5>
+        <h5>Humidity : {{data.humidity}}</h5>
+    </div>
+  </div>
+  <br>
+  
+<footer>
+    <p style="text-align:center;bottom:0%;color: whitesmoke;">© Adithya Mittapally, Inc</p>
+</footer>
+</body>
+
+</html>
