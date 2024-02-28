@@ -9,7 +9,7 @@ See it in action : https://onlineweather.onrender.com
 
 ====================
 
-Website - https://adithya-creation.github.io/web
+Website - https://adithya-creation.github.io/
 
 
 © 2024 Adithya Creation, Inc
